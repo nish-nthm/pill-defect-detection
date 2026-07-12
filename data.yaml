@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Crack', 'non defect', 'stain']
+
+roboflow:
+  workspace: tests-workspace-3tevn
+  project: wgtech
+  version: dataset
+  license: Private
+  url: https://app.roboflow.com/tests-workspace-3tevn/wgtech/dataset
