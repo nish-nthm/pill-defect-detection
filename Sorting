@@ -1,0 +1,28 @@
+#include <Servo.h>
+
+const int SERVO_PIN = 4;
+const int ON_ANGLE = 95;
+const int OFF_ANGLE = 45;
+
+Servo myServo;
+
+void setup() {
+  Serial.begin(9600);
+  myServo.attach(SERVO_PIN);
+  myServo.write(OFF_ANGLE);
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char signal = Serial.read();
+
+    if (signal == '1') {
+            delay(1500);
+
+      myServo.write(ON_ANGLE);
+          }
+    else if (signal == '0') {
+      myServo.write(OFF_ANGLE);
+    }
+  }
+}
