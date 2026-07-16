@@ -1,10 +1,11 @@
 from ultralytics import YOLO
 import cv2
 from collections import Counter
-
-MODEL_PATH = "runs/detect/pill_defect_v1_nano-2/weights/best.pt"
+MODEL_PATH = YOLO("C:/Users/nisha/pill/runs/detect/pill_defect_finetuned/weights/best.pt")
+MODEL_PATH.export(format="engine", imgsz=960, device=0)
+#MODEL_PATH = "runs/detect/pill_defect_v1_nano-2/weights/best.pt"
 CONF_THRESHOLD = 0.25
-CAMERA_INDEX = 1
+CAMERA_INDEX = 0
 IMG_SIZE = 960  # match your training imgsz
 
 model = YOLO(MODEL_PATH)
